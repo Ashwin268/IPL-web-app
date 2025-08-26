@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL WEB Application</title>
+</head>
+<body>
+    <h1>TEAM1 VS TEAM2</h1>
+
+    <form action="/teamvsteam" method="get">
+        <label>SELECT TEAM1</label>
+        <select name="team1">
+            <option>please select</option>
+            {% for i in teams %}
+            <option>{{ i }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label>SELECT TEAM2</label>
+        <select name="team2">
+            <option>please select</option>
+            {% for i in teams %}
+            <option>{{ i }}</option>
+            {% endfor %}
+        </select><br><br>
+        <input type="submit" value="Track Record">
+    </form>
+{% if result %}
+{% for i in result %}
+<p>{{ i }} : {{ result[i] }}</p>
+{% endfor %}
+{% endif %}
+</body>
+</html>
