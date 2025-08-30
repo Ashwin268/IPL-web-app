@@ -1,2 +1,2 @@
 # IPL-web-app
-creating IPL Web app to utilize the api service which is already created
+A sample web app to consume and display data from my IPL API Service.
