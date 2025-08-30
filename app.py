@@ -15,9 +15,27 @@ def teamvsteam():
     team2 = request.args.get('team2')
     responses = requests.get('http://127.0.0.1:5000/api/teams')
     teams = responses.json()['teams']
+    responses1 = requests.get(
+        'http://127.0.0.1:5000/api/compareTeams?team1={}&team2={}'.format(team1, team2)
+    )
+    print("COMPARE API RESPONSE:", responses1.json())
+    return render_template('index.html', result=responses1.json(), teams=sorted(teams))
 
-    responses1 = requests.get('http://127.0.0.1:5000/api/compareTeams?team1={}&team2={}'.format(team1, team2))
-    return render_template('index.html', result = responses1.json(), teams=sorted(teams))
 
+@app.route('/teamrecords')
+def teamrecords():
+    team = request.args.get('team')
+
+    responses = requests.get('http://127.0.0.1:5000/api/teams')
+    teams = responses.json()['teams']
+
+    result = None
+    if team:
+        responses1 = requests.get(
+            f'http://127.0.0.1:5000/api/teamRecords?team={team}'
+        )
+        result = responses1.json()
+
+    return render_template('index.html', teams=sorted(teams), team_result=result, selected_team=team)
 
 app.run(debug=True, port=7000)
