@@ -13,7 +13,7 @@ Users can compare teams, check team records, and view match statistics with a cl
 ## Getting Started
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ipl-stats-dashboard.git
+   git clone https://github.com/Ashwin268/ipl-stats-dashboard.git
    cd ipl-stats-dashboard
    ```
 
