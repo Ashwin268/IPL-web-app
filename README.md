@@ -28,7 +28,7 @@ Users can compare teams, check team records, and view match statistics with a cl
    python app.py
    ```
 
-   Access the app at `http://127.0.0.1:5000/`
+   Access the app at `http://127.0.0.1:7000/`
 
 ## Tech Stack
 
